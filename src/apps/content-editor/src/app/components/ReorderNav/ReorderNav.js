@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { Modal, ModalContent } from "@zesty-io/core/Modal";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faBan } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "@zesty-io/core";
 
 import DraggableItem from "./DragComponents/DraggableItem";
@@ -116,17 +116,19 @@ class ReorderNav extends Component {
         <ModalContent>
           <section>
             <span className={styles.container}>
-              <span className={styles.buttons}>
-                {/* <Button
+              <span className={styles.Button}>
+                <Button
                   kind="cancel"
-                  className={styles.close}
+                  className={styles.Close}
                   onClick={this.props.handleClose}
                   id="CloseReorderModal"
                 >
-                  <FontAwesomeIcon icon={faTimes} />
-                </Button> */}
+                  <FontAwesomeIcon icon={faBan} />
+                  Cancel
+                </Button>
                 {this.state.dirty ? (
                   <Button
+                    className={styles.Button}
                     kind="save"
                     onClick={this.requestForReorder}
                     disabled={this.state.requesting}
